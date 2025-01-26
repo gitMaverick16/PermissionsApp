@@ -1,0 +1,87 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35707.178 d17.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{21D36C92-C606-4CFB-B034-6E431AAAEF9F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Command", "Command", "{EE37A6F5-5AB4-43A4-81E6-B0F3EA99B9A8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Query", "Query", "{86BD72C9-10DB-4F38-B248-6D9184F030AA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PermissionsApp.Command.Api", "src\Command\PermissionsApp.Command.Api\PermissionsApp.Command.Api.csproj", "{17ADE66A-1189-4D56-A5BC-B1E39564CCB5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PermissionsApp.Command.Application", "src\Command\PermissionsApp.Command.Application\PermissionsApp.Command.Application.csproj", "{90020B03-72D0-4834-A98B-62592746FE8C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PermissionsApp.Command.Infrastructure", "src\Command\PermissionsApp.Command.Infrastructure\PermissionsApp.Command.Infrastructure.csproj", "{E1498521-4D36-4A23-84ED-F93010EC0053}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PermissionsApp.Command.Domain", "src\Command\PermissionsApp.Command.Domain\PermissionsApp.Command.Domain.csproj", "{4968CB0F-E4F4-4C63-9E56-B7753F1D3175}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PermissionsApp.Query.Api", "src\Query\PermissionsApp.Query.Api\PermissionsApp.Query.Api.csproj", "{21652DB6-7FEC-4582-8032-CC138622D824}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PermissionsApp.Query.Application", "src\Query\PermissionsApp.Query.Application\PermissionsApp.Query.Application.csproj", "{5EAF1152-3344-402B-9B1A-4C2D08A4F148}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PermissionsApp.Query.Infrastructure", "src\Query\PermissionsApp.Query.Infrastructure\PermissionsApp.Query.Infrastructure.csproj", "{4C7F120F-3A20-4B4C-B5C2-CB8FFC8DE836}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PermissionsApp.Query.Domain", "src\Query\PermissionsApp.Query.Domain\PermissionsApp.Query.Domain.csproj", "{E89CA26E-6E47-40C2-A801-8E6CAD362459}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0E9C7E81-C40F-4BA2-9381-4969D6610C29}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{17ADE66A-1189-4D56-A5BC-B1E39564CCB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17ADE66A-1189-4D56-A5BC-B1E39564CCB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17ADE66A-1189-4D56-A5BC-B1E39564CCB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17ADE66A-1189-4D56-A5BC-B1E39564CCB5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90020B03-72D0-4834-A98B-62592746FE8C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90020B03-72D0-4834-A98B-62592746FE8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90020B03-72D0-4834-A98B-62592746FE8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90020B03-72D0-4834-A98B-62592746FE8C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E1498521-4D36-4A23-84ED-F93010EC0053}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1498521-4D36-4A23-84ED-F93010EC0053}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1498521-4D36-4A23-84ED-F93010EC0053}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1498521-4D36-4A23-84ED-F93010EC0053}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4968CB0F-E4F4-4C63-9E56-B7753F1D3175}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4968CB0F-E4F4-4C63-9E56-B7753F1D3175}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4968CB0F-E4F4-4C63-9E56-B7753F1D3175}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4968CB0F-E4F4-4C63-9E56-B7753F1D3175}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21652DB6-7FEC-4582-8032-CC138622D824}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21652DB6-7FEC-4582-8032-CC138622D824}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21652DB6-7FEC-4582-8032-CC138622D824}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21652DB6-7FEC-4582-8032-CC138622D824}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5EAF1152-3344-402B-9B1A-4C2D08A4F148}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5EAF1152-3344-402B-9B1A-4C2D08A4F148}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5EAF1152-3344-402B-9B1A-4C2D08A4F148}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5EAF1152-3344-402B-9B1A-4C2D08A4F148}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C7F120F-3A20-4B4C-B5C2-CB8FFC8DE836}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C7F120F-3A20-4B4C-B5C2-CB8FFC8DE836}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C7F120F-3A20-4B4C-B5C2-CB8FFC8DE836}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C7F120F-3A20-4B4C-B5C2-CB8FFC8DE836}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E89CA26E-6E47-40C2-A801-8E6CAD362459}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E89CA26E-6E47-40C2-A801-8E6CAD362459}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E89CA26E-6E47-40C2-A801-8E6CAD362459}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E89CA26E-6E47-40C2-A801-8E6CAD362459}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{EE37A6F5-5AB4-43A4-81E6-B0F3EA99B9A8} = {21D36C92-C606-4CFB-B034-6E431AAAEF9F}
+		{86BD72C9-10DB-4F38-B248-6D9184F030AA} = {21D36C92-C606-4CFB-B034-6E431AAAEF9F}
+		{17ADE66A-1189-4D56-A5BC-B1E39564CCB5} = {EE37A6F5-5AB4-43A4-81E6-B0F3EA99B9A8}
+		{90020B03-72D0-4834-A98B-62592746FE8C} = {EE37A6F5-5AB4-43A4-81E6-B0F3EA99B9A8}
+		{E1498521-4D36-4A23-84ED-F93010EC0053} = {EE37A6F5-5AB4-43A4-81E6-B0F3EA99B9A8}
+		{4968CB0F-E4F4-4C63-9E56-B7753F1D3175} = {EE37A6F5-5AB4-43A4-81E6-B0F3EA99B9A8}
+		{21652DB6-7FEC-4582-8032-CC138622D824} = {86BD72C9-10DB-4F38-B248-6D9184F030AA}
+		{5EAF1152-3344-402B-9B1A-4C2D08A4F148} = {86BD72C9-10DB-4F38-B248-6D9184F030AA}
+		{4C7F120F-3A20-4B4C-B5C2-CB8FFC8DE836} = {86BD72C9-10DB-4F38-B248-6D9184F030AA}
+		{E89CA26E-6E47-40C2-A801-8E6CAD362459} = {86BD72C9-10DB-4F38-B248-6D9184F030AA}
+	EndGlobalSection
+EndGlobal
