@@ -7,7 +7,7 @@ Accept: application/json
 {
   "employerName": "Test",
   "employerLastName": "Test",
-  "permissionDate": "2024-10-26T10:00:00",
+  "permissionDate": "2023-10-26T10:00:00",
   "permissionTypeId": 4
 }
 
@@ -24,7 +24,7 @@ Content-Type: application/json
 Accept: application/json
 
 {
-  "employerName": "Sergio2",
+  "employerName": "S",
   "employerLastName": "Rondon2",
   "permissionDate": "2024-01-26T10:00:00",
   "permissionTypeId": 3

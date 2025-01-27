@@ -16,14 +16,14 @@ namespace PermissionsApp.Command.Application.Permissions.Commands.CreatePermissi
             _permissionRepository = permissionRepository;
             _unitOfWork = unitOfWork;
         }
-        public async Task<ErrorOr<Permission>> Handle(CreatePermissionCommand request, CancellationToken cancellationToken)
+        public async Task<ErrorOr<Permission>> Handle(CreatePermissionCommand command, CancellationToken cancellationToken)
         {
             var permission = new Permission
             {
-                EmployerName = request.EmployerName,
-                EmployerLastName = request.EmployerLastName,
-                PermissionDate = request.PermissionDate,
-                PermissionTypeId = request.PermissionTypeId
+                EmployerName = command.EmployerName,
+                EmployerLastName = command.EmployerLastName,
+                PermissionDate = command.PermissionDate,
+                PermissionTypeId = command.PermissionTypeId
             };
             await _permissionRepository.AddPermissionAsync(permission);
 
