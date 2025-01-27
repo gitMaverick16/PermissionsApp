@@ -30,6 +30,16 @@ builder.Services.AddScoped<ISeedPermissions, SeedPermissions>();
 builder.Services.AddApplication()
     .AddInfrastructure();
 
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(builder =>
+    {
+        builder.AllowAnyOrigin()  
+               .AllowAnyMethod()  
+               .AllowAnyHeader(); 
+    });
+});
+
 var app = builder.Build();
 
 using (var scope = app.Services.CreateScope())
