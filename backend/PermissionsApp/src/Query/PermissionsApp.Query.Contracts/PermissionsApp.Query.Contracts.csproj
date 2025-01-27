@@ -6,8 +6,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\PermissionsApp.Query.Application\PermissionsApp.Query.Application.csproj" />
-  </ItemGroup>
-
 </Project>
