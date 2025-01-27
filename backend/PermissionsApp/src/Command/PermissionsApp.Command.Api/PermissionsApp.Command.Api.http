@@ -5,10 +5,10 @@ Content-Type: application/json
 Accept: application/json
 
 {
-  "employerName": "John",
-  "employerLastName": "Doe",
+  "employerName": "Sergio",
+  "employerLastName": "Rondon",
   "permissionDate": "2024-01-26T10:00:00",
-  "permissionId": 1
+  "permissionId": 5
 }
 
 ###

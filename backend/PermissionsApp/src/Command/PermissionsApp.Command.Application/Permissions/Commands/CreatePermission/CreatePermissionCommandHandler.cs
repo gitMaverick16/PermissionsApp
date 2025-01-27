@@ -10,8 +10,8 @@ namespace PermissionsApp.Command.Application.Permissions.Commands.CreatePermissi
         private readonly IPermissionRepository _permissionRepository;
         //private readonly IUnitOfWork _unitOfWork;
         public CreatePermissionCommandHandler(
-            IPermissionRepository permissionRepository,
-            IUnitOfWork unitOfWork)
+            IPermissionRepository permissionRepository)
+            //IUnitOfWork unitOfWork)
         {
             _permissionRepository = permissionRepository;
             //_unitOfWork = unitOfWork;
@@ -20,7 +20,10 @@ namespace PermissionsApp.Command.Application.Permissions.Commands.CreatePermissi
         {
             var permission = new Permission
             {
-                Id = 123
+                EmployerName = request.EmployerName,
+                EmployerLastName = request.EmployerLastName,
+                PermissionDate = request.PermissionDate,
+                PermissionTypeId = request.PermissionId
             };
             await _permissionRepository.AddPermissionAsync(permission);
 

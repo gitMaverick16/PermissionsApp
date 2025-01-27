@@ -3,6 +3,8 @@ using PermissionsApp.Command.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 
+ConfigurationManager Configuration = builder.Configuration;
+
 // Add services to the container.
 
 builder.Services.AddControllers();
@@ -10,7 +12,7 @@ builder.Services.AddControllers();
 builder.Services.AddOpenApi();
 
 builder.Services.AddApplication()
-    .AddInfrastructure();
+    .AddInfrastructure(Configuration);
 
 var app = builder.Build();
 
