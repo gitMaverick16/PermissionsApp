@@ -23,7 +23,7 @@ namespace PermissionsApp.Command.Application.Permissions.Commands.CreatePermissi
                 EmployerName = request.EmployerName,
                 EmployerLastName = request.EmployerLastName,
                 PermissionDate = request.PermissionDate,
-                PermissionTypeId = request.PermissionId
+                PermissionTypeId = request.PermissionTypeId
             };
             await _permissionRepository.AddPermissionAsync(permission);
 

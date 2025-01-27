@@ -8,5 +8,5 @@ namespace PermissionsApp.Command.Application.Permissions.Commands.CreatePermissi
         string EmployerName,
         string EmployerLastName,
         DateTime PermissionDate,
-        int PermissionId) : IRequest<ErrorOr<Permission>>;
+        int PermissionTypeId) : IRequest<ErrorOr<Permission>>;
 }

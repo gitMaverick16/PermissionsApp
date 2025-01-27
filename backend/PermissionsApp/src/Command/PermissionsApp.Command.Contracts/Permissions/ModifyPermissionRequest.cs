@@ -1,6 +1,6 @@
 ﻿namespace PermissionsApp.Command.Contracts.Permissions
 {
-    public record CreatePermissionRequest(
+    public record ModifyPermissionRequest(
         string EmployerName,
         string EmployerLastName,
         DateTime PermissionDate,
