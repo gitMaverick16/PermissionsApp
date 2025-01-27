@@ -15,6 +15,7 @@ namespace PermissionsApp.Command.Infrastructure
             services.AddDbContext<PermissionsAppDbContext>(options =>
                 options.UseSqlServer(connectionString));
             services.AddScoped<IPermissionRepository, PermissionRepository>();
+            services.AddScoped<IUnitOfWork>(serviceProvider => serviceProvider.GetRequiredService<PermissionsAppDbContext>());
             return services;
         }
     }

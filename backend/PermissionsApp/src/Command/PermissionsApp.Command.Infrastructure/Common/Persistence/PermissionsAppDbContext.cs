@@ -1,10 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using PermissionsApp.Command.Application.Common.Interfaces;
 using PermissionsApp.Command.Domain.Permissions;
 using PermissionsApp.Command.Infrastructure.Common.Persistence.Seeds;
 
 namespace PermissionsApp.Command.Infrastructure.Common.Persistence
 {
-    public class PermissionsAppDbContext : DbContext
+    public class PermissionsAppDbContext : DbContext, IUnitOfWork
     {
         public PermissionsAppDbContext(DbContextOptions options) : base(options)
         {
@@ -12,6 +13,11 @@ namespace PermissionsApp.Command.Infrastructure.Common.Persistence
 
         public DbSet<Permission> Permissions { get; set; }
         public DbSet<PermissionType> PermissionTypes { get; set; }
+
+        public async Task CommitChangesAsync()
+        {
+            await base.SaveChangesAsync();
+        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

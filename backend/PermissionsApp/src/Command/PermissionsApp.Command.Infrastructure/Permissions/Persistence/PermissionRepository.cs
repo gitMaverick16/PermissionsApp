@@ -14,7 +14,6 @@ namespace PermissionsApp.Command.Infrastructure.Permissions.Persistence
         public async Task AddPermissionAsync(Permission permission)
         {
             await _dbContext.Permissions.AddAsync(permission);
-            await _dbContext.SaveChangesAsync();
         }
     }
 }
