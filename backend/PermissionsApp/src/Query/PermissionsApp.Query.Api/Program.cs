@@ -2,6 +2,7 @@ using PermissionsApp.Query.Application;
 using PermissionsApp.Query.Application.Common.Interfaces;
 using PermissionsApp.Query.Infrastructure;
 using PermissionsApp.Query.Infrastructure.Configurations;
+using PermissionsApp.Query.Infrastructure.Consumer;
 using PermissionsApp.Query.Infrastructure.Permissions.Persistence;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -18,6 +19,11 @@ builder.Services.AddProblemDetails();
 
 builder.Services.Configure<ElasticSettings>(options =>
     Configuration.GetSection("ElasticSettings").Bind(options));
+
+builder.Services.Configure<KafkaSettings>(options =>
+    Configuration.GetSection("KafkaSettings").Bind(options));
+
+builder.Services.AddSingleton<IHostedService, KafkaConsumer>();
 
 builder.Services.AddScoped<ISeedPermissions, SeedPermissions>();
 

@@ -1,5 +1,6 @@
 using PermissionsApp.Command.Application;
 using PermissionsApp.Command.Infrastructure;
+using PermissionsApp.Command.Infrastructure.Configurations;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,6 +13,9 @@ builder.Services.AddControllers();
 builder.Services.AddOpenApi();
 
 builder.Services.AddProblemDetails();
+
+builder.Services.Configure<KafkaSettings>(options =>
+    Configuration.GetSection("KafkaSettings").Bind(options));
 
 builder.Services.AddApplication()
     .AddInfrastructure(Configuration);

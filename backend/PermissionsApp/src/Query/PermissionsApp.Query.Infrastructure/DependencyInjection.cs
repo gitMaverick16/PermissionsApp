@@ -10,7 +10,6 @@ namespace PermissionsApp.Query.Infrastructure
             this IServiceCollection services)
         {
             services.AddScoped<IPermissionRepository, PermissionRepository>();
-            //services.AddScoped<ISeedPermissions, SeedPermissions>();
 
             return services;
         }

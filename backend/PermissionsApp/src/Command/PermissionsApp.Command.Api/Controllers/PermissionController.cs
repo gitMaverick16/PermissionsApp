@@ -6,7 +6,6 @@ using PermissionsApp.Command.Application.Permissions.Commands.CreatePermission;
 using PermissionsApp.Command.Application.Permissions.Commands.DeletePermission;
 using PermissionsApp.Command.Application.Permissions.Commands.ModifyPermission;
 using PermissionsApp.Command.Contracts.Permissions;
-using System.ComponentModel;
 
 namespace PermissionsApp.Command.Api.Controllers
 {
@@ -31,7 +30,7 @@ namespace PermissionsApp.Command.Api.Controllers
                 request.PermissionTypeId);
             var createPermissionResult = await _mediator.Send(command);
             return createPermissionResult.MatchFirst(
-                permission => CreatedAtAction(permission.Id.ToString(), new PermissionResponse(permission.Id)),
+                permission => CreatedAtAction(null, new PermissionResponse(permission.Id)),
                 errors => Problem(errors));
         }
 

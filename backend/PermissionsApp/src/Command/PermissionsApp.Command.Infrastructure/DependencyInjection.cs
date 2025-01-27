@@ -3,6 +3,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using PermissionsApp.Command.Application.Common.Interfaces;
 using PermissionsApp.Command.Infrastructure.Common.Persistence;
+using PermissionsApp.Command.Infrastructure.Permissions.KafkaEvents;
 using PermissionsApp.Command.Infrastructure.Permissions.Persistence;
 
 namespace PermissionsApp.Command.Infrastructure
@@ -16,6 +17,7 @@ namespace PermissionsApp.Command.Infrastructure
                 options.UseSqlServer(connectionString));
             services.AddScoped<IPermissionRepository, PermissionRepository>();
             services.AddScoped<IUnitOfWork>(serviceProvider => serviceProvider.GetRequiredService<PermissionsAppDbContext>());
+            services.AddScoped<IPermissionEventProducer, PermissionEventProducer>();
             return services;
         }
     }
