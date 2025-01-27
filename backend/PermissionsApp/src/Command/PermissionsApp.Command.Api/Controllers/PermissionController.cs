@@ -1,9 +1,12 @@
-﻿using MediatR;
+﻿using ErrorOr;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 using PermissionsApp.Command.Application.Permissions.Commands.CreatePermission;
 using PermissionsApp.Command.Application.Permissions.Commands.DeletePermission;
 using PermissionsApp.Command.Application.Permissions.Commands.ModifyPermission;
 using PermissionsApp.Command.Contracts.Permissions;
+using System.ComponentModel;
 
 namespace PermissionsApp.Command.Api.Controllers
 {
@@ -28,8 +31,8 @@ namespace PermissionsApp.Command.Api.Controllers
                 request.PermissionTypeId);
             var createPermissionResult = await _mediator.Send(command);
             return createPermissionResult.MatchFirst(
-                permission => Ok(new PermissionResponse(permission.Id)),
-                error => Problem());
+                permission => CreatedAtAction(permission.Id.ToString(), new PermissionResponse(permission.Id)),
+                errors => Problem(errors));
         }
 
         [HttpDelete("{permissionId:int}")]
@@ -39,7 +42,7 @@ namespace PermissionsApp.Command.Api.Controllers
             var deletePermissionResult = await _mediator.Send(command);
             return deletePermissionResult.Match<IActionResult>(
                 _ => NoContent(),
-                _ => Problem()
+                errors => Problem(errors)
                 );
         }
 
@@ -58,7 +61,43 @@ namespace PermissionsApp.Command.Api.Controllers
 
             return modifyPermissionResult.MatchFirst(
                 permission => Ok(new PermissionResponse(permission.Id)),
-                error => Problem());
+                errors => Problem(errors));
+        }
+
+        public IActionResult Problem(List<Error> errors)
+        {
+            if(errors.Count is 0)
+            {
+                return Problem();
+            }
+
+            if(errors.All(error => error.Type == ErrorType.Validation))
+            {
+                return ValidationProblem(errors);
+            }
+            return Problem(errors[0]);
+        }
+        public IActionResult Problem(Error error)
+        {
+            var statusCode = error.Type switch
+            {
+                ErrorType.Conflict => StatusCodes.Status409Conflict,
+                ErrorType.Validation => StatusCodes.Status400BadRequest,
+                ErrorType.NotFound => StatusCodes.Status404NotFound,
+                _ => StatusCodes.Status500InternalServerError
+            };
+            return Problem(statusCode: statusCode, detail: error.Description);
+        }
+
+        public IActionResult ValidationProblem(List<Error> errors) {
+            var modelStateDictionary = new ModelStateDictionary();
+            foreach(var error in errors)
+            {
+                modelStateDictionary.AddModelError(
+                    error.Code,
+                    error.Description);
+            }
+            return ValidationProblem(modelStateDictionary);
         }
     }
 }
