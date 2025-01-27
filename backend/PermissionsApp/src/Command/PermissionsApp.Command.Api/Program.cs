@@ -22,15 +22,15 @@ builder.Services.AddApplication()
 
 builder.Services.AddCors(options =>
 {
-    options.AddDefaultPolicy(builder =>
-    {
-        builder.AllowAnyOrigin()
-               .AllowAnyMethod()
-               .AllowAnyHeader();
-    });
+    options.AddPolicy("FrontendPolicy",
+        policy => policy.WithOrigins("http://localhost:3000")
+                        .AllowAnyMethod()
+                        .AllowAnyHeader());
 });
 
 var app = builder.Build();
+
+app.UseCors("FrontendPolicy");
 
 // Configure the HTTP request pipeline.
 app.UseExceptionHandler();
