@@ -34,6 +34,16 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PermissionsApp.Command.Cont
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PermissionsApp.Query.Contracts", "src\Query\PermissionsApp.Query.Contracts\PermissionsApp.Query.Contracts.csproj", "{A36A9DE6-F644-4E16-AB35-FFC37E084D51}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{577B2C8F-699B-42EA-8DBD-706687C8A1BA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Command", "Command", "{9BF49864-16AA-4DF3-9181-382785EFA26E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Query", "Query", "{C3446463-85C6-41C2-87C9-55AB95D07D87}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PermissionsApp.Command.Application.Test", "tests\Command\PermissionApp.Command.Application.Test\PermissionsApp.Command.Application.Test.csproj", "{0324AF80-9B65-40FE-9457-AA599C75EB7D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PermissionsApp.Query.Application.Test", "tests\Query\PermissionsApp.Query.Application.Test\PermissionsApp.Query.Application.Test.csproj", "{C3F24086-3EC0-40E6-800F-E4D6FB08B216}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -80,6 +90,14 @@ Global
 		{A36A9DE6-F644-4E16-AB35-FFC37E084D51}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A36A9DE6-F644-4E16-AB35-FFC37E084D51}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A36A9DE6-F644-4E16-AB35-FFC37E084D51}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0324AF80-9B65-40FE-9457-AA599C75EB7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0324AF80-9B65-40FE-9457-AA599C75EB7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0324AF80-9B65-40FE-9457-AA599C75EB7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0324AF80-9B65-40FE-9457-AA599C75EB7D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3F24086-3EC0-40E6-800F-E4D6FB08B216}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3F24086-3EC0-40E6-800F-E4D6FB08B216}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3F24086-3EC0-40E6-800F-E4D6FB08B216}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3F24086-3EC0-40E6-800F-E4D6FB08B216}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -97,5 +115,9 @@ Global
 		{E89CA26E-6E47-40C2-A801-8E6CAD362459} = {86BD72C9-10DB-4F38-B248-6D9184F030AA}
 		{537AD913-2A5A-4D93-9743-13CA3CD31358} = {EE37A6F5-5AB4-43A4-81E6-B0F3EA99B9A8}
 		{A36A9DE6-F644-4E16-AB35-FFC37E084D51} = {86BD72C9-10DB-4F38-B248-6D9184F030AA}
+		{9BF49864-16AA-4DF3-9181-382785EFA26E} = {577B2C8F-699B-42EA-8DBD-706687C8A1BA}
+		{C3446463-85C6-41C2-87C9-55AB95D07D87} = {577B2C8F-699B-42EA-8DBD-706687C8A1BA}
+		{0324AF80-9B65-40FE-9457-AA599C75EB7D} = {9BF49864-16AA-4DF3-9181-382785EFA26E}
+		{C3F24086-3EC0-40E6-800F-E4D6FB08B216} = {C3446463-85C6-41C2-87C9-55AB95D07D87}
 	EndGlobalSection
 EndGlobal
