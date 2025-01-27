@@ -5,28 +5,28 @@ Content-Type: application/json
 Accept: application/json
 
 {
-  "employerName": "Test2",
-  "employerLastName": "Test2",
+  "employeeName": "Test5",
+  "employeeLastName": "Test5",
   "permissionDate": "2025-10-26T10:00:00",
   "permissionTypeId": 4
 }
 
 ###
 
-DELETE {{PermissionsApp.Command.Api_HostAddress}}/api/Permission/8
+DELETE {{PermissionsApp.Command.Api_HostAddress}}/api/Permission/6
 Content-Type: application/json
 Accept: application/json
 
 ###
 
-PUT {{PermissionsApp.Command.Api_HostAddress}}/api/Permission/6
+PUT {{PermissionsApp.Command.Api_HostAddress}}/api/Permission/7
 Content-Type: application/json
 Accept: application/json
 
 {
-  "employerName": "S",
-  "employerLastName": "Rondon2",
-  "permissionDate": "2024-01-26T10:00:00",
+  "employeeName": "Sergio",
+  "employeeLastName": "Rondon2",
+  "permissionDate": "2026-01-26T10:00:00",
   "permissionTypeId": 3
 }
 

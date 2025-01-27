@@ -12,8 +12,8 @@ using PermissionsApp.Command.Infrastructure.Common.Persistence;
 namespace PermissionsApp.Command.Infrastructure.Common.Persistence.Migrations
 {
     [DbContext(typeof(PermissionsAppDbContext))]
-    [Migration("20250127052049_InitialMigration")]
-    partial class InitialMigration
+    [Migration("20250127170002_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -33,11 +33,11 @@ namespace PermissionsApp.Command.Infrastructure.Common.Persistence.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("EmployerLastName")
+                    b.Property<string>("EmployeeLastName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("EmployerName")
+                    b.Property<string>("EmployeeName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -52,6 +52,48 @@ namespace PermissionsApp.Command.Infrastructure.Common.Persistence.Migrations
                     b.HasIndex("PermissionTypeId");
 
                     b.ToTable("Permissions");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            EmployeeLastName = "Doe",
+                            EmployeeName = "Jhon",
+                            PermissionDate = new DateTime(2025, 3, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            PermissionTypeId = 1
+                        },
+                        new
+                        {
+                            Id = 2,
+                            EmployeeLastName = "Smith",
+                            EmployeeName = "Jane",
+                            PermissionDate = new DateTime(2025, 7, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            PermissionTypeId = 2
+                        },
+                        new
+                        {
+                            Id = 3,
+                            EmployeeLastName = "Johnson",
+                            EmployeeName = "Emily",
+                            PermissionDate = new DateTime(2025, 5, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            PermissionTypeId = 3
+                        },
+                        new
+                        {
+                            Id = 4,
+                            EmployeeLastName = "Brown",
+                            EmployeeName = "Olivia",
+                            PermissionDate = new DateTime(2025, 4, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            PermissionTypeId = 5
+                        },
+                        new
+                        {
+                            Id = 5,
+                            EmployeeLastName = "Martinez",
+                            EmployeeName = "Lucas",
+                            PermissionDate = new DateTime(2025, 8, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            PermissionTypeId = 4
+                        });
                 });
 
             modelBuilder.Entity("PermissionsApp.Command.Domain.Permissions.PermissionType", b =>

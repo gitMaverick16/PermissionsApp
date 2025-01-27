@@ -6,10 +6,10 @@ namespace PermissionsApp.Command.Application.Permissions.Commands.CreatePermissi
     {
         public CreatePermissionCommandValidator()
         {
-            RuleFor(x => x.EmployerName)
+            RuleFor(x => x.EmployeeName)
                 .MinimumLength(3)
                 .MaximumLength(20);
-            RuleFor(x => x.EmployerLastName)
+            RuleFor(x => x.EmployeeLastName)
                 .MinimumLength(3)
                 .MaximumLength(20);
             RuleFor(x => x.PermissionDate)

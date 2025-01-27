@@ -6,8 +6,8 @@ namespace PermissionsApp.Command.Application.Permissions.Commands.ModifyPermissi
 {
     public record ModifyPermissionCommand(
         int PermissionId, 
-        string EmployerName, 
-        string EmployerLastName, 
+        string EmployeeName, 
+        string EmployeeLastName, 
         DateTime PermissionDate, 
         int PermissionTypeId) : IRequest<ErrorOr<Permission>>;
 }

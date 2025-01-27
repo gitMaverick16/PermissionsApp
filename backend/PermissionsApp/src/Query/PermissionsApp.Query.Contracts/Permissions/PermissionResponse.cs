@@ -2,8 +2,8 @@
 {
     public record PermissionResponse(
         int Id,
-        string EmployerName,
-        string EmployerLastName,
+        string EmployeeName,
+        string EmployeeLastName,
         DateTime PermissionDate,
         int PermissionTypeId,
         string PermissionTypeDescription);

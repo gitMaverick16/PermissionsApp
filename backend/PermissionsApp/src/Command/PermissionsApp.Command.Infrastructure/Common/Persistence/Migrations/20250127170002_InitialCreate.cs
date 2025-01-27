@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace PermissionsApp.Command.Infrastructure.Common.Persistence.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialMigration : Migration
+    public partial class InitialCreate : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -32,8 +32,8 @@ namespace PermissionsApp.Command.Infrastructure.Common.Persistence.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    EmployerName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    EmployerLastName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    EmployeeName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    EmployeeLastName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     PermissionDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     PermissionTypeId = table.Column<int>(type: "int", nullable: false)
                 },
@@ -60,6 +60,18 @@ namespace PermissionsApp.Command.Infrastructure.Common.Persistence.Migrations
                     { 5, "Personal Leave" },
                     { 6, "Bereavement Leave" },
                     { 7, "Medical Leave" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Permissions",
+                columns: new[] { "Id", "EmployeeLastName", "EmployeeName", "PermissionDate", "PermissionTypeId" },
+                values: new object[,]
+                {
+                    { 1, "Doe", "Jhon", new DateTime(2025, 3, 15, 0, 0, 0, 0, DateTimeKind.Unspecified), 1 },
+                    { 2, "Smith", "Jane", new DateTime(2025, 7, 10, 0, 0, 0, 0, DateTimeKind.Unspecified), 2 },
+                    { 3, "Johnson", "Emily", new DateTime(2025, 5, 20, 0, 0, 0, 0, DateTimeKind.Unspecified), 3 },
+                    { 4, "Brown", "Olivia", new DateTime(2025, 4, 5, 0, 0, 0, 0, DateTimeKind.Unspecified), 5 },
+                    { 5, "Martinez", "Lucas", new DateTime(2025, 8, 15, 0, 0, 0, 0, DateTimeKind.Unspecified), 4 }
                 });
 
             migrationBuilder.CreateIndex(

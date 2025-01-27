@@ -35,8 +35,8 @@ namespace PermissionsApp.Command.Application.Permissions.Commands.CreatePermissi
         {
             var permission = new Permission
             {
-                EmployerName = command.EmployerName,
-                EmployerLastName = command.EmployerLastName,
+                EmployeeName = command.EmployeeName,
+                EmployeeLastName = command.EmployeeLastName,
                 PermissionDate = command.PermissionDate,
                 PermissionTypeId = command.PermissionTypeId,
             };
@@ -48,8 +48,8 @@ namespace PermissionsApp.Command.Application.Permissions.Commands.CreatePermissi
             {
                 Action = ActionType.Add,
                 Id = permission.Id,
-                EmployerName = permission.EmployerName,
-                EmployerLastName = permission.EmployerLastName,
+                EmployeeName = permission.EmployeeName,
+                EmployeeLastName = permission.EmployeeLastName,
                 PermissionDate = permission.PermissionDate,
                 PermissionTypeId = permission.PermissionTypeId,
                 PermissionTypeDescription = PermissionTypes[permission.PermissionTypeId]

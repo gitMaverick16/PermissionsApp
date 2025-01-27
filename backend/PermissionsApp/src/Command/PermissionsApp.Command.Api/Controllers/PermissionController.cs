@@ -24,8 +24,8 @@ namespace PermissionsApp.Command.Api.Controllers
         public async Task<IActionResult> CreatePermission(CreatePermissionRequest request)
         {
             var command = new CreatePermissionCommand(
-                request.EmployerName,
-                request.EmployerLastName,
+                request.EmployeeName,
+                request.EmployeeLastName,
                 request.PermissionDate,
                 request.PermissionTypeId);
             var createPermissionResult = await _mediator.Send(command);
@@ -50,8 +50,8 @@ namespace PermissionsApp.Command.Api.Controllers
         {
             var command = new ModifyPermissionCommand(
                 permissionId,
-                request.EmployerName,
-                request.EmployerLastName,
+                request.EmployeeName,
+                request.EmployeeLastName,
                 request.PermissionDate,
                 request.PermissionTypeId
             );

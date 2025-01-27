@@ -30,11 +30,11 @@ namespace PermissionsApp.Command.Infrastructure.Common.Persistence.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("EmployerLastName")
+                    b.Property<string>("EmployeeLastName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("EmployerName")
+                    b.Property<string>("EmployeeName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -54,40 +54,40 @@ namespace PermissionsApp.Command.Infrastructure.Common.Persistence.Migrations
                         new
                         {
                             Id = 1,
-                            EmployerLastName = "Doe",
-                            EmployerName = "Jhon",
+                            EmployeeLastName = "Doe",
+                            EmployeeName = "Jhon",
                             PermissionDate = new DateTime(2025, 3, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             PermissionTypeId = 1
                         },
                         new
                         {
                             Id = 2,
-                            EmployerLastName = "Smith",
-                            EmployerName = "Jane",
+                            EmployeeLastName = "Smith",
+                            EmployeeName = "Jane",
                             PermissionDate = new DateTime(2025, 7, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             PermissionTypeId = 2
                         },
                         new
                         {
                             Id = 3,
-                            EmployerLastName = "Johnson",
-                            EmployerName = "Emily",
+                            EmployeeLastName = "Johnson",
+                            EmployeeName = "Emily",
                             PermissionDate = new DateTime(2025, 5, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             PermissionTypeId = 3
                         },
                         new
                         {
                             Id = 4,
-                            EmployerLastName = "Brown",
-                            EmployerName = "Olivia",
+                            EmployeeLastName = "Brown",
+                            EmployeeName = "Olivia",
                             PermissionDate = new DateTime(2025, 4, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             PermissionTypeId = 5
                         },
                         new
                         {
                             Id = 5,
-                            EmployerLastName = "Martinez",
-                            EmployerName = "Lucas",
+                            EmployeeLastName = "Martinez",
+                            EmployeeName = "Lucas",
                             PermissionDate = new DateTime(2025, 8, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             PermissionTypeId = 4
                         });

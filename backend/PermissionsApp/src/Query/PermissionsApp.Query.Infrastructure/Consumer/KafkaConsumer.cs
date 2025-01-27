@@ -52,7 +52,7 @@ namespace PermissionsApp.Query.Infrastructure.Consumer
                         {
                             var consumeResult = consumer.Consume(cts.Token);
                             var permission = JsonSerializer.Deserialize<PermissionEvent>(consumeResult.Message.Value);
-                            Console.WriteLine($"Message received: {permission.EmployerName} {permission.EmployerLastName}, {permission.PermissionDate}");
+                            Console.WriteLine($"Message received: {permission.EmployeeName} {permission.EmployeeLastName}, {permission.PermissionDate}");
                             SynchronizeQueryDatabase(permission);
                         }
                         catch (ConsumeException e)
@@ -82,8 +82,8 @@ namespace PermissionsApp.Query.Infrastructure.Consumer
                     var permission = new Permission
                     {
                         Id = @event.Id,
-                        EmployerName = @event.EmployerName,
-                        EmployerLastName = @event.EmployerLastName,
+                        EmployeeName = @event.EmployeeName,
+                        EmployeeLastName = @event.EmployeeLastName,
                         PermissionDate = @event.PermissionDate,
                         PermissionType = new PermissionType
                         {

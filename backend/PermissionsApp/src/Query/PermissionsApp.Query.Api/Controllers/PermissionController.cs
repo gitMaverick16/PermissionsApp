@@ -26,8 +26,8 @@ namespace PermissionsApp.Query.Api.Controllers
             return getPermissionResult.MatchFirst(
                 permission => Ok(new PermissionResponse(
                     getPermissionResult.Value.Id,
-                    getPermissionResult.Value.EmployerName,
-                    getPermissionResult.Value.EmployerLastName,
+                    getPermissionResult.Value.EmployeeName,
+                    getPermissionResult.Value.EmployeeLastName,
                     getPermissionResult.Value.PermissionDate,
                     getPermissionResult.Value.PermissionType.Id,
                     getPermissionResult.Value.PermissionType.Description)),
@@ -46,8 +46,8 @@ namespace PermissionsApp.Query.Api.Controllers
                     permissions.ConvertAll(
                         permission => new PermissionResponse(
                             permission.Id, 
-                            permission.EmployerName, 
-                            permission.EmployerLastName,
+                            permission.EmployeeName, 
+                            permission.EmployeeLastName,
                             permission.PermissionDate,
                             permission.PermissionType.Id,
                             permission.PermissionType.Description))),
