@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net9.0</TargetFramework>
@@ -12,6 +12,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\PermissionsApp.Command.Application\PermissionsApp.Command.Application.csproj" />
+    <ProjectReference Include="..\PermissionsApp.Command.Contracts\PermissionsApp.Command.Contracts.csproj" />
+    <ProjectReference Include="..\PermissionsApp.Command.Infrastructure\PermissionsApp.Command.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

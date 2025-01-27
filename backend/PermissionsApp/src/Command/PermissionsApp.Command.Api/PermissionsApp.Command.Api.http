@@ -1,6 +1,14 @@
 @PermissionsApp.Command.Api_HostAddress = http://localhost:5112
 
-GET {{PermissionsApp.Command.Api_HostAddress}}/weatherforecast/
+POST {{PermissionsApp.Command.Api_HostAddress}}/api/Permission/
+Content-Type: application/json
 Accept: application/json
+
+{
+  "employerName": "John",
+  "employerLastName": "Doe",
+  "permissionDate": "2024-01-26T10:00:00",
+  "permissionId": 1
+}
 
 ###
