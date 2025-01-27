@@ -1,4 +1,5 @@
-﻿using MediatR;
+﻿using ErrorOr;
+using MediatR;
 
 namespace PermissionsApp.Command.Application.Permissions.Command.CreatePermission
 {
@@ -6,5 +7,5 @@ namespace PermissionsApp.Command.Application.Permissions.Command.CreatePermissio
         string EmployerName,
         string EmployerLastName,
         DateTime PermissionDate,
-        int PermissionId) : IRequest<int>;
+        int PermissionId) : IRequest<ErrorOr<int>>;
 }

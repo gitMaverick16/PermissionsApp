@@ -24,9 +24,10 @@ namespace PermissionsApp.Command.Api.Controllers
                 request.EmployerLastName,
                 request.PermissionDate,
                 request.PermissionId);
-            var permissionId = await _mediator.Send(command);
-            var response = new PermissionResponse(permissionId);
-            return Ok(response);
+            var createPermissionResult = await _mediator.Send(command);
+            return createPermissionResult.MatchFirst(
+                id => Ok(new PermissionResponse(id)),
+                error => Problem());
         }
     }
 }
