@@ -6,6 +6,6 @@
         public string EmployerName { get; set; }
         public string EmployerLastName { get; set; }
         public DateTime PermissionDate { get; set; }
-        public int PermissionTypeId { get; set; }
+        public PermissionType PermissionType { get; set; }
     }
 }

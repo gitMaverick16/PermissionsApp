@@ -1,5 +1,9 @@
 version: "3.4"
 
+networks:
+  permissionsNetwork:
+    driver: bridge
+
 services:
   zookeeper:
     image: bitnami/zookeeper:latest
@@ -10,6 +14,8 @@ services:
       - "zookeeper_data:/bitnami"
     environment:
       - ALLOW_ANONYMOUS_LOGIN=yes
+    networks:
+      - permissionsNetwork
 
   kafka:
     image: bitnami/kafka:latest
@@ -25,17 +31,22 @@ services:
       - KAFKA_ADVERTISED_LISTENERS=PLAINTEXT://localhost:9092
     depends_on:
       - zookeeper
+    networks:
+      - permissionsNetwork
 
   elasticsearch:
     image: docker.elastic.co/elasticsearch/elasticsearch:8.4.0
     restart: always
     environment:
       - discovery.type=single-node
+      - xpack.security.enabled=false # Desactiva autenticación
       - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
     ports:
       - "9200:9200"
     volumes:
       - elasticsearch_data:/usr/share/elasticsearch/data
+    networks:
+      - permissionsNetwork
 
   kibana:
     image: docker.elastic.co/kibana/kibana:8.4.0
@@ -44,7 +55,9 @@ services:
       - "5601:5601"
     depends_on:
       - elasticsearch
-    
+    networks:
+      - permissionsNetwork
+
   sqlserver:
     image: mcr.microsoft.com/mssql/server:2022-latest
     restart: always
@@ -55,6 +68,8 @@ services:
       - MSSQL_SA_PASSWORD=YourStrong!Passw0rd
     volumes:
       - sqlserver_data:/var/opt/mssql
+    networks:
+      - permissionsNetwork
 
 volumes:
   zookeeper_data:
@@ -65,7 +80,3 @@ volumes:
     driver: local
   sqlserver_data:
     driver: local
-
-networks:
-  default:
-    driver: permissionsNetwork

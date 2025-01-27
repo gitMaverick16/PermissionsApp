@@ -1,6 +1,11 @@
 @PermissionsApp.Query.Api_HostAddress = http://localhost:5043
 
-GET {{PermissionsApp.Query.Api_HostAddress}}/api/Permission/1234
+GET {{PermissionsApp.Query.Api_HostAddress}}/api/Permission/1
+Accept: application/json
+
+###
+
+GET {{PermissionsApp.Query.Api_HostAddress}}/api/Permission
 Accept: application/json
 
 ###

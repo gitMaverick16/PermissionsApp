@@ -5,5 +5,6 @@
         string EmployerName,
         string EmployerLastName,
         DateTime PermissionDate,
-        int PermissionTypeId);
+        int PermissionTypeId,
+        string PermissionTypeDescription);
 }
