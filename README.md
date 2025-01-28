@@ -59,7 +59,7 @@ cd PermissionsApp
 
 ### Step 3: Build and Run the Containers(Kafka, ElasticSearch, SqlServer, etc.)
 ```bash
-docker-compose up
+docker-compose up -d
 ```
 
 ### Step 4: Apply the migrations in the Sql Server database
@@ -77,12 +77,16 @@ dotnet ef database update -p PermissionsApp.Command.Infrastructure -s Permission
 #### Run Command microservice
 ```bash
 cd backend\PermissionsApp\src\Command\PermissionsApp.Command.Api
+```
+```bash
 dotnet run --urls "http://localhost:5112"
 ```
 #### Open a new terminal at the root of the project
 #### Run Query microservice
 ```bash
 cd backend\PermissionsApp\src\Query\PermissionsApp.Query.Api
+```
+```bash
 dotnet run --urls "http://localhost:5043"
 ```
 ### Step 6: Run the frontend
@@ -90,7 +94,11 @@ dotnet run --urls "http://localhost:5043"
 #### Move to the frontend and execute
 ```bash
 cd frontend\permission-crud
+```
+```bash
 npm i
+```
+```bash
 npm start
 ```
 
