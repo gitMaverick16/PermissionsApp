@@ -1,0 +1,108 @@
+.permission-list {
+    padding: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7fb;
+    min-height: 100vh;
+  }
+  
+  .permission-list h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #333;
+    font-weight: 600;
+    text-align: center;
+  }
+  
+  .permission-list ul {
+    list-style-type: none;
+    padding: 0;
+    display: grid;
+    gap: 15px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+  
+  .permission-list li {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  
+  .permission-list li:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  }
+  
+  .permission-list li div {
+    flex: 1;
+  }
+  
+  .permission-list li p {
+    margin: 5px 0;
+    font-size: 16px;
+    color: #555;
+  }
+  
+  .permission-list li p:first-child {
+    font-weight: 600;
+    color: #333;
+  }
+  
+  .permission-list li p:last-child {
+    font-size: 14px;
+    color: #777;
+  }
+  
+  .permission-list li .actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-end;
+  }
+  
+  .permission-list li .actions a,
+  .permission-list li .actions button {
+    background-color: #4CAF50;
+    color: white;
+    font-size: 14px;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .permission-list li .actions a:hover,
+  .permission-list li .actions button:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);
+  }
+  
+  .permission-list li .actions button {
+    background-color: #ff4d4d;
+    margin-top: 10px;
+  }
+  
+  .permission-list li .actions button:hover {
+    background-color: #e60000;
+  }
+  
+  .permission-list a {
+    color: #007bff;
+    font-size: 16px;
+    margin-bottom: 20px;
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  
+  .permission-list a:hover {
+    text-decoration: underline;
+    color: #0056b3;
+  }
+  

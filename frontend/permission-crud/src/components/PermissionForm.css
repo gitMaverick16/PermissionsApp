@@ -1,0 +1,117 @@
+.permission-form {
+    padding: 40px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column; 
+  }
+  
+  .permission-form h2 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px; 
+    font-weight: 600;
+    text-align: center; 
+  }
+  
+  .permission-form form {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .permission-form form input,
+  .permission-form form select,
+  .permission-form form button {
+    padding: 12px 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    color: #555;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .permission-form form input:focus,
+  .permission-form form select:focus,
+  .permission-form form button:focus {
+    outline: none;
+    border-color: #007bff;
+  }
+  
+  .permission-form form button {
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .permission-form form button:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);
+  }
+  
+  .permission-form form input,
+  .permission-form form select {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .permission-form form select {
+    cursor: pointer;
+  }
+  
+  .permission-form form input[type="datetime-local"] {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .permission-form form .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .permission-form a {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 14px;
+    text-align: center;
+  }
+  
+  .permission-form a:hover {
+    text-decoration: underline;
+  }
+
+.spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+  }
+  
+  .lds-dual-ring {
+    display: inline-block;
+    width: 64px;
+    height: 64px;
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #3498db;
+    border-radius: 50%;
+    animation: lds-dual-ring 1.2s linear infinite;
+  }
+  
+  @keyframes lds-dual-ring {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  
