@@ -14,7 +14,7 @@ const PermissionForm = () => {
   const today = new Date().toISOString().split("T")[0];
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState('');
-  const [messageType, setMessageType] = useState(''); // 'success' o 'error'
+  const [messageType, setMessageType] = useState(''); 
   
   const { id } = useParams();
   const navigate = useNavigate();
@@ -38,7 +38,7 @@ const PermissionForm = () => {
     apiCall
       .then(() => {
         showMessage(`Permission ${id ? 'updated' : 'created'} successfully`, 'success');
-        setTimeout(() => navigate('/'), 2000); // Redirigir después de 2s
+        setTimeout(() => navigate('/'), 2000);
       })
       .catch(() => showMessage(`Error ${id ? 'updating' : 'creating'} permission`, 'error'))
       .finally(() => setLoading(false));
@@ -52,7 +52,7 @@ const PermissionForm = () => {
   const showMessage = (text, type) => {
     setMessage(text);
     setMessageType(type);
-    setTimeout(() => setMessage(''), 3000); // Ocultar el mensaje después de 3s
+    setTimeout(() => setMessage(''), 3000); 
   };
 
   return (
