@@ -1,11 +1,11 @@
 @PermissionsApp.Command.Api_HostAddress = http://localhost:5112
 
-POST {{PermissionsApp.Command.Api_HostAddress}}/api/Permission/
+POST {{PermissionsApp.Command.Api_HostAddress}}/api/Permission/create
 Content-Type: application/json
 Accept: application/json
 
 {
-  "employeeName": "Test5",
+  "employeeName": "Test7",
   "employeeLastName": "Test5",
   "permissionDate": "2025-10-26T10:00:00",
   "permissionTypeId": 4

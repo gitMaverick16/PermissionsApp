@@ -20,7 +20,7 @@ namespace PermissionsApp.Command.Api.Controllers
             _mediator = mediator;
         }
 
-        [HttpPost]
+        [HttpPost("Create")]
         public async Task<IActionResult> CreatePermission(CreatePermissionRequest request)
         {
             var command = new CreatePermissionCommand(

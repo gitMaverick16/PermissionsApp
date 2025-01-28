@@ -7,7 +7,7 @@ export const getPermissions = () => axios.get(API_URL_QUERY);
 
 export const getPermissionById = (id) => axios.get(`${API_URL_QUERY}/${id}`);
 
-export const createPermission = (permission) => axios.post(API_URL_COMMAND, permission);
+export const createPermission = (permission) => axios.post(`${API_URL_COMMAND}/create`, permission);
 
 export const updatePermission = (id, permission) => axios.put(`${API_URL_COMMAND}/${id}`, permission);
 

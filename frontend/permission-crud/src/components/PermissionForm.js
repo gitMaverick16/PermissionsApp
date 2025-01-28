@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { createPermission, updatePermission, getPermissionById } from '../api';
-import './PermissionForm.css';  
+import './PermissionForm.css';
 
 const PermissionForm = () => {
   const [permission, setPermission] = useState({
@@ -11,37 +11,37 @@ const PermissionForm = () => {
     permissionTypeId: 1,
   });
 
-  const [loading, setLoading] = useState(false);  
+  const today = new Date().toISOString().split("T")[0];
+  const [loading, setLoading] = useState(false);
+  const [message, setMessage] = useState('');
+  const [messageType, setMessageType] = useState(''); // 'success' o 'error'
+  
   const { id } = useParams();
   const navigate = useNavigate();
 
   useEffect(() => {
     if (id) {
-      setLoading(true);  
+      setLoading(true);
       getPermissionById(id)
         .then((response) => setPermission(response.data))
-        .catch((error) => console.error('Error fetching permission:', error))
-        .finally(() => setLoading(false));  
+        .catch(() => showMessage('Error fetching permission data', 'error'))
+        .finally(() => setLoading(false));
     }
   }, [id]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
-  
-    if (id) {
-      updatePermission(id, permission)
-        .then(() => {
-          navigate('/');
-        })
-        .catch((error) => console.error('Error updating permission:', error))
-        .finally(() => setLoading(false));
-    } else {
-      createPermission(permission)
-        .then(() => navigate('/'))
-        .catch((error) => console.error('Error creating permission:', error))
-        .finally(() => setLoading(false));
-    }
+
+    const apiCall = id ? updatePermission(id, permission) : createPermission(permission);
+
+    apiCall
+      .then(() => {
+        showMessage(`Permission ${id ? 'updated' : 'created'} successfully`, 'success');
+        setTimeout(() => navigate('/'), 2000); // Redirigir después de 2s
+      })
+      .catch(() => showMessage(`Error ${id ? 'updating' : 'creating'} permission`, 'error'))
+      .finally(() => setLoading(false));
   };
 
   const handleChange = (e) => {
@@ -49,16 +49,28 @@ const PermissionForm = () => {
     setPermission({ ...permission, [name]: value });
   };
 
+  const showMessage = (text, type) => {
+    setMessage(text);
+    setMessageType(type);
+    setTimeout(() => setMessage(''), 3000); // Ocultar el mensaje después de 3s
+  };
+
   return (
     <div className="permission-form">
       <h2>{id ? 'Edit Permission' : 'Add Permission'}</h2>
-      
+
       {loading && (
         <div className="spinner">
           <div className="lds-dual-ring"></div>
         </div>
       )}
-      
+
+      {message && (
+        <div className={`alert ${messageType}`}>
+          {message}
+        </div>
+      )}
+
       <form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -77,7 +89,8 @@ const PermissionForm = () => {
           required
         />
         <input
-          type="datetime-local"
+          type="date"
+          min={today}
           name="permissionDate"
           value={permission.permissionDate}
           onChange={handleChange}
